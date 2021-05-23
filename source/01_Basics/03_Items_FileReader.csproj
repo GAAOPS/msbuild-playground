@@ -1,0 +1,12 @@
+﻿<Project>
+    <ItemGroup>        
+        <NoteFiles Include="Notes\*Note.txt" />
+    </ItemGroup>
+    <Target Name="Listing">
+        <ReadLinesFromFile File="%(NoteFiles.Identity)">
+            <Output TaskParameter="Lines" ItemName="NoteItems"></Output>
+        </ReadLinesFromFile>
+        <Message Text="@(NoteItems, '%0A')" Importance="high"/>
+        <Message Text="Input files: %0A@(NoteFiles->'- %(FullPath)','%0A')" Importance="high"/>
+    </Target>
+</Project>

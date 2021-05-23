@@ -1,0 +1,17 @@
+﻿<Project DefaultTargets="Build">
+    <Import Project="05_01_BuildFE.targets"></Import>
+    <Import Project="05_01_BuildBE.targets"></Import>
+    
+    <PropertyGroup>
+        <FePath>c:\project\fe</FePath>
+        <BePath>c:\project\be</BePath>
+    </PropertyGroup>
+    
+    <Target Name="Build" DependsOnTargets="BuildFE;BuildBE">
+        <Message Text="I'm Building Now!!" Importance="high"/>
+    </Target>
+
+    <Target Name="Cleanup" AfterTargets="Build">
+        <Message Text="I'm Cleaning up Now!!" Importance="high"/>
+    </Target>
+</Project>

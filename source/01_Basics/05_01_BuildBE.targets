@@ -1,0 +1,6 @@
+﻿<Project DefaultTargets="Build">
+    <Target Name="BuildBE">
+        <Message  Text="I'm Building Backend Now!!" Importance="high"/>
+        <Message  Text="Path is: $(BePath)" Importance="high" />
+    </Target>
+</Project>

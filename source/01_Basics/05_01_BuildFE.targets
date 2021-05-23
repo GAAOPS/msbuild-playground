@@ -1,0 +1,6 @@
+﻿<Project>
+    <Target Name="BuildFE">
+        <Message  Text="I'm Building Frontend Now!!" Importance="high"/>
+        <Message  Text="FE Path is: $(FePath)" Importance="high"/>        
+    </Target>
+</Project>

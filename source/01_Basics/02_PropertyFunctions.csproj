@@ -1,0 +1,21 @@
+﻿<Project>
+    <PropertyGroup>
+        <PjGuid>$([System.Guid]::NewGuid())</PjGuid>
+        <Today>$([System.DateTime]::Now.ToString('yyyy.MM.dd'))</Today>
+        <IsJune>$([System.DateTime]::Now.Month.Equals(6))</IsJune>
+        <NumberOne Condition="$(OneIsTwo)!='yes'">1</NumberOne>
+        <NumberOne Condition="$(OneIsTwo)=='yes'">2</NumberOne>
+        <NumberTwo>2</NumberTwo>
+        <Sum>$([MSBuild]::Add($(NumberOne), $(NumberTwo)))</Sum>
+        <HelpUrl>https://docs.microsoft.com/en-us/visualstudio/msbuild/property-functions?view=vs-2019</HelpUrl>
+    </PropertyGroup>
+    <Target Name="OutP">
+        <Message Text="Guid: $(PjGuid)" Importance="high"></Message>
+        <Message Text="Sum: $(Sum)" Importance="high"></Message>
+        <Message Text="Today: $(Today)" Importance="high"></Message>        
+        <Message Text="Now is June?: $(IsJune)" Importance="high"></Message>
+        <Message Text="Oh, Half of the Year is already gone!!!" Importance="high" Condition="$(IsJune)"></Message>
+        <Message Text="Help: $([MSBuild]::Unescape($(HelpUrl)))" Importance="high"></Message>
+        <Message Text="Break the Math! Run:dotnet msbuild -p:OneIsTwo=yes" Importance="high"></Message>
+    </Target>
+</Project>

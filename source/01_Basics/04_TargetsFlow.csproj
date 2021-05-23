@@ -1,0 +1,26 @@
+﻿<Project DefaultTargets="Build">
+    <Target Name="BuildFE">
+        <Message  Text="I'm Building Frontend Now!!" Importance="high"/>
+    </Target>
+    
+    <Target Name="BuildBE">
+        <Message  Text="I'm Building Backend Now!!" Importance="high"/>
+    </Target>
+    
+    <Target Name="Build" DependsOnTargets="BuildFE;BuildBE">
+        <Message  Text="I'm Building Now!!" Importance="high"/>
+    </Target>
+
+    <Target Name="Cleanup" AfterTargets="Build">
+        <CallTarget Targets="DoCleanup;SayBye" />
+    </Target>
+
+    <Target Name="DoCleanup">
+        <Message  Text="I'm Cleaning up Now!!" Importance="high"/>
+    </Target>
+
+    <Target Name="SayBye" >
+        <Message  Text="Bye!" Importance="high"/>
+    </Target>
+
+</Project>
