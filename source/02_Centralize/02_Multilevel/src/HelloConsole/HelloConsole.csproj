@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\HelloLibs\HelloLibs.csproj" />
+  </ItemGroup>
+
+</Project>
