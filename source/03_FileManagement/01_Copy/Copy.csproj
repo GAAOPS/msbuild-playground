@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="*.txt" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Include="..\Patches\**\*.*" LinkBase=".." CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" Visible="false" />
+    <!-- https://docs.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#copytopublishdirectory -->
+    <!--
+      CopyToOutputDirectory / CopyToPublishDirectory:
+       * Never
+       * PreserveNewest
+       * Always <- Avoid, prevents any VS incremental build optimization
+    -->
+
+    <!--
+    Non-SDK projects:
+    Link="TextFiles\%(RecursiveDir)%(Filename)%(Extension)"
+    -->
+
+    <!--
+    "None" correlates to the build action.
+    Others are:
+    * Compile
+    * EmbeddedResource
+    * Content
+    -->
+
+    <!--
+    Visible="false" hides the items in Solution Explorer
+    -->
+  </ItemGroup>
+  
+</Project>

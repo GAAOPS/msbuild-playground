@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <SelfContained>False</SelfContained>
+    <PublishDir>c:\pbTest\bin</PublishDir>
+  </PropertyGroup>
+</Project>
