@@ -7,6 +7,6 @@
             <Output TaskParameter="Lines" ItemName="NoteItems"></Output>
         </ReadLinesFromFile>
         <Message Text="@(NoteItems, '%0A')" Importance="high"/>
-        <Message Text="Input files: %0A@(NoteFiles->'- %(FullPath)','%0A')" Importance="high"/>
+        <Message Text="Input files: %0A@(NoteFiles->'- %(FullPath) - %(ModifiedTime)','%0A')" Importance="high"/>
     </Target>
 </Project>

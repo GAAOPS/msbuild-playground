@@ -11,5 +11,9 @@
 
             Console.WriteLine("Hello World!");
         }
+
+        static void Print(Greeting greet){
+            Console.WriteLine(greet.Greet);
+        }
     }
 }

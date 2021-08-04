@@ -2,10 +2,10 @@
     <PropertyGroup>
         <Version>1.0.0</Version>
         <Name>My C# Proj</Name>
-        <SayHello>true</SayHello>
+        <SayHello>false</SayHello>
     </PropertyGroup>
     <Target Name="Outp">
-        <Message  Text="Properties are Simple Key-Value Pair, you can Access them using $()" Importance="high"/>
+        <Message  Text="Properties are Simple Key-Value Pair, you can Access them using %24()" Importance="high"/>
         <Message  Text="Name: $(Name)" Importance="high"/>
         <Message  Text="Version: $(Version)" Importance="high"/>
         <Message  Text="Hello!!!" Importance="high" Condition="$(SayHello)==true"/>

@@ -13,24 +13,28 @@
         <People Include="Markus;Tobi;Dawid;Helen" />
         <People Include="$(FirstNames)" />
         <People Remove="Bob" />
+
         <Person Include="P1" FirstName="Homer" LastName="Simpson"></Person>
         <Person Include="P2" FirstName="Lisa" LastName="Simpson"></Person>
         <Person Include="P3" FirstName="Ned" LastName="Flanders"></Person>
+
         <HelpUrl Include="https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-special-characters?view=vs-2019" />
         <HelpUrl Include="https://docs.microsoft.com/en-us/visualstudio/msbuild/special-characters-to-escape?view=vs-2019" />
     </ItemGroup>
     <Target Name="Listing">
         <Message Text="People are defined as Items, ';' is the seperator for items: " Importance="high"></Message>
         <Message Text="Simple listing array of items: " Importance="high"></Message>
-        <Message  Text="Hi @(People)" Importance="high"/>
+        <Message Text="Hi @(People) %0A" Importance="high"/>
 
-        <Message Text="Using Item functions: " Importance="high"></Message>
-        <Message  Text="@(People-> 'Hallo %(Identity)!','%0A')" Importance="high"/>
+        <Message Text="%0A Using Item functions: " Importance="high"></Message>
+        <Message Text="@(People-> 'Hallo %(Identity)!','%0A')" Importance="high"/>
 
-        <Message Text="** Using Item Metadata (Objects):" Importance="high"/>
+        <Message Text="%0A ** Using Item Metadata (Objects):" Importance="high"/>
         <Message Text="%(Person.FirstName) %(Person.LastName)" Importance="high"/>
-        <Message Text="** GroupBy LastName:" Importance="high"/>
+
+        <Message Text="%0A ** GroupBy LastName:" Importance="high"/>
         <Message Text="%(Person.LastName): @(Person,', ')" Importance="high"/>
-        <Message Text="Special Characters: %0A@(HelpUrl,'%0A')" Importance="high"/>        
+        
+        <Message Text="%0A%0A Special Characters: %0A@(HelpUrl,'%0A') %0A" Importance="high"/>        
     </Target>
 </Project>

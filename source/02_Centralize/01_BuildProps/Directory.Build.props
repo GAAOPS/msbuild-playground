@@ -2,8 +2,10 @@
     <PropertyGroup>
         <Version>1.0.1</Version>
         <Company>Acmie</Company>
-<!--        <TargetFramework>net5.0</TargetFramework>-->
-        <TargetFramework>net48</TargetFramework>
+        <TargetFramework>net48</TargetFramework> 
+        <!-- <TargetFramework>net48</TargetFramework>         -->
+        <Nullable>enable</Nullable>
+        <LangVersion>8.0</LangVersion>
         <TreatWarningsAsErrors Condition="'$(Configuration)' == 'Release'">True</TreatWarningsAsErrors>
     </PropertyGroup>
 </Project>
